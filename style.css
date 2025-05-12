@@ -24,3 +24,30 @@ body {
     text-decoration: underline;
   }
   
+  #travel-gallery {
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  .gallery img {
+    width: 100%;
+    max-width: 300px; /* Increase this if you want even larger images */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  
+  .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  

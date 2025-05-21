@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mirza | QA Engineer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header>
     <h1>👋 Hi, I'm Mirza</h1>
@@ -17,31 +19,65 @@
   </header>
 
   <main>
-    
+
 
     <section id="about">
-        <h2>About Me</h2>
-        <p>
-          I'm Mirza, a passionate QA Engineer with over 8 years of experience at Therap (a US-based software company).
-          I specialize in both manual and automated testing, with a strong focus on delivering reliable, scalable, and user-friendly software.
-          <br><br>
-          Currently, I'm expanding my skills in test automation using tools like Playwright, JavaScript, and API testing frameworks.
-          I'm also building personal projects to deepen my knowledge and showcase my abilities.
-          <br><br>
-          My goal is to work abroad, especially in Malaysia, where I can grow professionally in a collaborative and fast-paced environment.
-          I'm committed to continuous learning, clean testing practices, and contributing to high-quality software products.
-        </p>
-      </section>
-      
-      
+      <h2>About Me</h2>
+      <p>
+        I'm Mirza, a passionate QA Engineer with over 8 years of experience at Therap (a US-based software company).
+        I specialize in both manual and automated testing, with a strong focus on delivering reliable, scalable, and
+        user-friendly software.
+        <br><br>
+        Currently, I'm expanding my skills in test automation using tools like Playwright, JavaScript, and API testing
+        frameworks.
+        I'm also building personal projects to deepen my knowledge and showcase my abilities.
+        <br><br>
+        <!-- My goal is to work abroad, especially in Malaysia, where I can grow professionally in a collaborative and fast-paced environment.
+          I'm committed to continuous learning, clean testing practices, and contributing to high-quality software products. -->
+      </p>
+    </section>
+
+
 
     <section id="travel-gallery">
-        <h2>Travel Gallery</h2>
-        <div class="gallery">
+      <h2>Travel Gallery</h2>
+      <!-- <div class="gallery">
           <img src="images/pic1.jpg" alt="Travel photo 1">
-          <!-- Add more as needed -->
-        </div>
-      </section>
+          
+        </div> -->
+
+      <div class="slideshow-container">
+        <img class="slide" src="images/pic1.jpg" alt="Travel photo 1">
+        <img class="slide" src="images/pic2.jpg" alt="Travel photo 2">
+        <img class="slide" src="images/pic1.jpg" alt="Travel photo 3">
+
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1)">❯</button>
+      </div>
+
+    </section>
   </main>
 </body>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? "block" : "none";
+    });
+  }
+
+  function changeSlide(direction) {
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // Auto-show the first slide on load
+  showSlide(currentSlide);
+</script>
+
+
+
 </html>
